@@ -25,3 +25,15 @@ Data =
     pixel would be x=1 y=0 etc
 
 ----------------------------------------------------------------------------------------------------
+
+Building
+
+Compiling with Visual Studio on command line:
+- Requirements: Visual Studio C++ Command line tools, CMake 3.13, libpng and zlib
+- Run vcvars64.bat (Found from VS install directory)
+- Create directory build if it doesn't exist already
+- cd to build
+- cmake -D LIBPNG_DIR=PATH_TO_LIBPNG -D ZLIB_DIR=PATH_TO_ZLIB ../src
+    - Replace the PATH_TO_X's with the correct paths to the libraries. The directories should have
+      lib and include directories within them with the correct library and include files
+- msbuild respack.vcxproj /p:configuration=release
