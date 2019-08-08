@@ -1,9 +1,19 @@
 #include "pack.hpp"
+#include "File.hpp"
+
+static uint16_t FileFormatVersion = 1;
 
 void pack(const std::vector<std::string>& inputFiles, const std::string& outputFile) {
-    printf("Input files:\n");
+    auto out = File(outputFile, true);
+
+    out.write16(FileFormatVersion);
+    out.write16(0); // Number of resource objects. Fill later
+
     for (auto& i : inputFiles) {
-        printf("%s\n", i.c_str());
+        auto in = File(i, false);
     }
-    printf("Output file: %s\n", outputFile.c_str());
+
+    // Write the number of resource objects
+    out.seek(0x2);
+    out.write16(0);
 }

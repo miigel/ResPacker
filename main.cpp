@@ -1,5 +1,6 @@
 // Little Endian byte order assumed for the target platform
 
+#include <cstdio>
 #include <exception>
 #include <stdexcept>
 #include <string>

@@ -6,8 +6,9 @@ File format (version 1)
 
 Byte order is Little Endian
 
-0x0: File format version (1 byte)
-0x1 ... 0xN: Resource objects
+0x0: File format version (2 bytes)
+0x2: Number of resource objects (2 bytes)
+0x4 ... 0xN: Resource objects
 
 Resource object:
 

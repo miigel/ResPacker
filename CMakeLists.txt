@@ -4,6 +4,7 @@ project(respack)
 set(SRC_FILES
     main.cpp
     pack.cpp
+    File.cpp
 )
 
 if (NOT DEFINED LIBPNG_DIR)
