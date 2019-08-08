@@ -5,6 +5,8 @@ set(SRC_FILES
     main.cpp
     pack.cpp
     File.cpp
+    ResourceObject.cpp
+    PngResource.cpp
 )
 
 if (NOT DEFINED LIBPNG_DIR)
@@ -16,8 +18,8 @@ if (NOT DEFINED ZLIB_DIR)
 endif (NOT DEFINED ZLIB_DIR)
 
 set(LIBRARIES
-    ${LIBPNG_DIR}/lib/libpng
-    ${ZLIB_DIR}/lib/zlib
+    ${LIBPNG_DIR}/lib/libpng.lib
+    ${ZLIB_DIR}/lib/zlib.lib
 )
 
 set(INCLUDE_DIRS

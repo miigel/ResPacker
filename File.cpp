@@ -44,6 +44,13 @@ void File::write32(uint32_t d) {
     write(v);
 }
 
+void File::write64(uint64_t d) {
+    std::vector<uint8_t> v;
+    auto p = reinterpret_cast<uint8_t*>(&d);
+    v.assign(p, p + sizeof(d));
+    write(v);
+}
+
 std::vector<uint8_t> File::read(int len) {
     if (isOutputFile)
         throw std::runtime_error("Read operation on output file: " + fileName);
@@ -71,7 +78,12 @@ uint32_t File::read32() {
     return *reinterpret_cast<const uint32_t*>(data.data());
 }
 
-void File::seek(int pos) {
+uint64_t File::read64() {
+    auto data = read(sizeof(uint64_t));
+    return *reinterpret_cast<const uint64_t*>(data.data());
+}
+
+void File::seek(uint64_t pos) {
     if (isOutputFile)
         fs.seekp(pos);
     else

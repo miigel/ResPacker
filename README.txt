@@ -7,14 +7,16 @@ File format (version 1)
 Byte order is Little Endian
 
 0x0: File format version (2 bytes)
-0x2: Number of resource objects (2 bytes)
-0x4 ... 0xN: Resource objects
+0x2: Number of resource objects (4 bytes)
+0x6 ... 0xN: Resource objects
 
 Resource object:
 
 0x0: Type (2 bytes)
-0x2: Data length in bytes (2 bytes)
-0x4 ... 0xN: Type specific data
+0x2: Resource name length in bytes (2 bytes)
+0x4 ... 0xN: ASCII encoded name of the resource
+0xN+1: Data length in bytes (4 bytes)
+0xN+5 ... 0xM: Type specific data
 
 Resource object 'image':
 

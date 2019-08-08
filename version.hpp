@@ -1,3 +1,3 @@
 #pragma once
 
-#define VersionString "0.1"
+#define VersionString "0.9"

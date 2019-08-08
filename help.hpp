@@ -10,4 +10,7 @@ const std::string HelpText =
     "Usage: respack INPUT_FILES... OUTPUT_FILE\n"
     "-h, --help: Print this help\n"
     "-v, --version: Print version\n"
+    "\n"
+    "Supported resource files:\n"
+    "png    Must be in 32bit RGBA format\n"
 ;
