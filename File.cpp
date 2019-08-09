@@ -2,7 +2,9 @@
 
 #include "File.hpp"
 
-File::File(const std::string& fileName, bool isOutputFile) {
+File::File(const std::string& fileName, bool isOutputFile) :
+    fileName(fileName), isOutputFile(isOutputFile)
+{
     if (isOutputFile) {
         fs.open(fileName, std::fstream::out | std::fstream::binary | std::fstream::trunc);
         if (!fs.is_open())
@@ -12,9 +14,6 @@ File::File(const std::string& fileName, bool isOutputFile) {
         if (!fs.is_open())
             throw std::runtime_error("Unable to open file: " + fileName);
     }
-
-    this->fileName = fileName;
-    this->isOutputFile = isOutputFile;
 }
 
 void File::write(const std::vector<uint8_t>& v) {

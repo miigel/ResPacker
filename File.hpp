@@ -22,6 +22,6 @@ public:
 
 private:
     std::fstream fs;
-    std::string fileName;
-    bool isOutputFile = false;
+    const std::string fileName;
+    const bool isOutputFile = false;
 };
