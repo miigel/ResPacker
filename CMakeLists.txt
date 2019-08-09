@@ -2,11 +2,11 @@ cmake_minimum_required(VERSION 3.13)
 project(respack)
 
 set(SRC_FILES
-    main.cpp
-    pack.cpp
-    File.cpp
-    ResourceObject.cpp
-    PngResource.cpp
+    src/main.cpp
+    src/pack.cpp
+    src/File.cpp
+    src/ResourceObject.cpp
+    src/PngResource.cpp
 )
 
 if (NOT DEFINED LIBPNG_DIR)
